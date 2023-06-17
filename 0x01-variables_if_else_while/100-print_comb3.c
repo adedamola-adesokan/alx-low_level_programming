@@ -1,33 +1,35 @@
-#include<stdlib.h>
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
-* main - Entry point
-*
-* Return: Always 0 (Success)
-*/
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+
 int main(void)
 {
-	int i, j;
+	int d, p;
 
-	for (i = 48; i <=  57; i++)
+	for (d = '0'; d < '9'; d++)
 	{
-		j = 48;
-		while (j <= 57)
+		for (p = d + 1; p <= '9'; p++)
 		{
-			putchar(i);
-			putchar(j);
-			if ((i == 57) && (j == 57))
+			if (p != d)
 			{
-				putchar('\n');
-			}
-			else
-			{
+				putchar(d);
+				putchar(p);
+
+				if (d == '8' && p == '9')
+					continue;
+
 				putchar(',');
 				putchar(' ');
 			}
-			j++;
 		}
 	}
+	putchar('\n');
+
 	return (0);
 }
